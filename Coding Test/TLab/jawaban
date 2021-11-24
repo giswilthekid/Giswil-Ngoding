@@ -1,0 +1,82 @@
+[1] 
+Computed properties adalah properti yang terdapat pada Vue.js yang berfungsi untuk menggambarkan atau mendeklarasikan value yang bergantung pada value lainnya (reactive dependencies). Misalkan ketika kita membinding data ke computed properties dalam suatu template, vue akan tahu kapan merubah DOM ketika value yang bergantung pada computed properties berubah.
+
+Contoh:
+
+<div id="example">
+  <p>Original message: "{{ message }}"</p>
+  <p>Computed reversed message: "{{ reversedMessage }}"</p>
+</div>
+
+<script>
+ var vm = new Vue({
+   el: '#example',
+   data: {
+     message: 'Hello'
+   },
+   computed: {
+     // a computed getter
+     reversedMessage: function () {
+       // `this` points to the vm instance
+       return this.message.split('').reverse().join('')
+     }
+   }
+ })
+</script>
+
+[2] 
+watcher merupakan salah satu fitur dari vue.js yang berfungsi untuk mengamati perubahan dan melakukan tindakan tertentu ketika suatu value berubah. watcher biasa digunakan saat ada operasi asynchronous. 
+
+Contoh: 
+
+<div id="example">
+  <input type="text" v-model="isi">{{ keterangan }}
+  <p>Computed reversed message: "{{ reversedMessage }}"</p>
+</div>
+
+<script>
+ var vm = new Vue({
+   el: '#example',
+   data: {
+     isi: ' ',
+     keterangan: ' '
+   },
+   watch: {
+     isi: function () {
+       this.keterangan = "Sedang mengetik..."
+       }
+     }
+   }
+ })
+</script>
+
+[3]
+component adalah reuseable vue intance yang berisikan elemen html
+
+[4]
+props merupakan kepanjangan dari properties. props pada vue js digunakan untuk mempassing data dari component parent ke salah satu component children
+
+[7]
+eslint adalah official plugin dari vue js yang berfungsi untuk support linting bagian template dan script dari single file component pada vue js. eslint akan secara otomatis menemukan syntax error,  menemukan penggunaan vue.js directives yang salah, dan menemukan kesalahan pada vue.js style guide
+
+[8]
+saya cenderung tidak menggunakan eslint ketika saya bekerja sendiri dan scope project yang saya kerjakan kecil dan berjangka pendek. akan tetapi jika saya bekerja didalam suatu tim dengan project skala besar dan jangka panjang, saya akan cenderung menggunakan eslint karena memudahkan saya dalam merapikan script, menjadikan standard penulisan kode dalam tim, dan mengurangi error.
+
+[9]
+SSR adalah kasus dimana kita melakukan rendering component vue js pada server dan mengembalikan hasil render dalam bentuk html strings ke client atau browser. SSR digunakan untuk menjadikan SEO web kita lebih baik, halaman web kita akan langsung dirender sepenuhnya dicari oleh search engine crawler. 
+
+[10]
+promise pada umumnya adalah proxy untuk value yang nantinya akan ada atau available. promise merupakan salah satu solusi untuk menangani kode asinkron tanpa menulis terlalu banyak callback pada kode kita. 
+
+[12]
+1. Deploy dengan VM: 
+- Kelebihan: dapat menggunakan beberapa environment atau lingkungan sistem operasi pada komputer yang sama
+-Kekurangan: kurang efisien dibanding mesin yang nyata karena vm mengakses perangkat keras secara tidak langsung
+ 
+2. Deploy dengan Container: 
+- Kelebihan: fleksibel dan scalable, mengurangi resource yang dibutuhkan dalam IT management, waktu yang dibutuhkan dalam mengemeas dan memasang app dalam container lebih cepat dibandingkan VM
+- Kekurangan: 
+
+3. Deploy dengan serverless:
+- Kelebihan: tidak perlu memikirkan server, continous scaling, subsecond metering
+- Kekurangan: belum support semua bahasa pemrograman

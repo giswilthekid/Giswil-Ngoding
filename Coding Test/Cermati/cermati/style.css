@@ -1,0 +1,499 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	font-family: 'Yantramanav', sans-serif;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.notif-panel {
+	width: 100%;
+	height: 60px;
+	background-color: #e5e5e5;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	z-index: 10;
+}
+
+.notif-out {
+	width: 100%;
+	height: 60px;
+	background-color: #e5e5e5;
+	display: flex;
+	justify-content: center;
+	z-index: 10;
+}
+
+.notif-panel .text-panel {
+	display: flex;
+	width: 720px;
+	height: 100%;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.notif-panel button {
+	width: 80px;
+	height: 35px;
+	text-align: center;
+	margin-left: 40px;
+	background-color: #007bc1;
+	color: white;
+	border-radius: 2px;
+	border: none;
+	cursor: pointer;
+}
+
+.notif-panel p {
+	max-width: 500px;
+}
+
+.notif-panel p a {
+	text-decoration: none;
+	color: #007bc1;
+}
+
+.container {
+	width: 100%;
+	position: relative;
+	padding-top: 55px;
+	overflow: hidden;
+}
+
+.container-after {
+	width: 100%;
+	position: relative;
+	animation-name: container-after;
+	animation-duration: 1s;
+	animation-timing-function: ease;
+	animation-fill-mode: forwards;
+}
+
+.header {
+	position: absolute;
+	z-index: 8;
+	padding: 20px;
+}
+
+.header img {
+	width: 60px;
+	height: 60px;
+}
+
+.hero {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	width: 100%;
+	height: 600px;
+	background-image: url(assets/img/work-desk__dustin-lee.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0px 0px;
+}
+
+.hero::before {
+	content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: #001d32;
+    opacity: 0.7;
+}
+
+.hero .hero-text {
+	position: absolute;
+	z-index: 5;
+	text-align: center;
+}
+
+.hero h1 {
+	font-size: 2.25em;
+	color: white;
+	margin-bottom: 10px;
+}
+
+.hero h2 {
+	font-size: 1.75em;
+	color: white;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+.hero p {
+	font-size: 1.25em;
+	color: white;
+	margin-bottom: 10px;
+	line-height: 150%;
+}
+
+.hero-text button {
+	margin-top: 10px;
+	width: 200px;
+	height: 50px;
+	border: 2px solid white;
+	background-color: transparent;
+	color: white;
+	cursor: pointer;
+}
+
+.hero-text button:hover {
+	background-color: white;
+	color: #007bc1;
+	transition: 0.3s;
+}
+
+.highlight {
+	box-sizing: border-box;
+	padding-top: 80px;
+	padding-bottom: 80px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #e5e5e5;
+}
+
+.highlight-header {
+	width: 650px;
+	text-align: center;
+	margin-bottom: 30px;
+	color: #464646;
+}
+
+.highlight-header h1 {
+	font-size: 2.25em;
+	margin-bottom: 10px;
+}
+
+.highlight-header h2 {
+	font-size: 1.25em;
+}
+
+.highlight-body {
+	margin-left: 30px;
+	margin-right: 30px;
+	display: grid;
+	grid-template-areas: 
+		'card1 card2 card3'
+		'card4 card5 card6';
+	grid-row-gap: 20px;
+	grid-column-gap: 20px;
+}
+
+.card {
+	color: #464646;
+	width: 410px;
+	height: 150px;
+	border: 1px solid #c9c9c9;
+	box-shadow: 1px 1px 1px 1px #f5f5f5;
+	padding: 15px 15px 0px 15px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+}
+
+.card-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.card-header h2 {
+	font-size: 1.5em;
+	margin-bottom: 20px;
+}
+
+.card-header i {
+	font-size: 1.5em;
+	color: #a6a9ac;
+}
+
+#card1 {
+	grid-area: card1;
+}
+
+#card2 {
+	grid-area: card2;
+}
+
+#card3 {
+	grid-area: card3;
+}
+
+#card4 {
+	grid-area: card4;
+}
+
+#card5 {
+	grid-area: card5;
+}
+
+#card6 {
+	grid-area: card6;
+}
+
+.footer {
+	height: 60px;
+	width: 100%;
+	background-color: #050328;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.footer p {
+	color: #4c537f;
+}
+
+.newsletter-panel {
+	width: 580px;
+	height: 170px;
+	background-color: rgba(25, 133, 198, 0.85);
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 5;
+	padding: 20px;
+	box-sizing: border-box;
+	color: #f2eeeb;
+	opacity: 0.5;
+}
+
+.newsletter-after {
+	width: 580px;
+	height: 170px;
+	background-color: rgba(25, 133, 198, 0.85);
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 5;
+	padding: 20px;
+	box-sizing: border-box;
+	color: #f2eeeb;
+	opacity: 0.5;
+	animation-name: newsletter-remove;
+	animation-duration: 2s;
+	animation-timing-function: ease-in;
+	animation-fill-mode: forwards;
+
+}
+
+.newsletter-panel .close-button {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	cursor: pointer;
+}
+
+.newsletter-panel .p6 {
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.newsletter-panel .p7 {
+}
+
+.newsletter-panel .form {
+	width: 100%;
+	height: 25px;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+
+.newsletter-panel input {
+	width: 430px;
+	height: 100%;
+	margin-right: 10px;
+	padding: 5px;
+	border: none;
+	box-sizing: border-box;
+	border-radius: 2px;
+}
+
+.input::placeholder {
+	font-weight: bold;
+	color: #c1c0c0;
+}
+
+.newsletter-panel button {
+	width: 100px;
+	height: 100%;
+	padding: 0;
+	border: 0;
+	cursor: pointer;
+	background-color: #ff8000;
+	color: white;
+	border-radius: 5%;
+	font-weight: bold;
+	border-radius: 2px;
+}
+
+@keyframes	container-after {
+	from {
+		margin-top: 0px;
+	}
+	to {
+		margin-top: -60px;
+	}
+}
+
+@keyframes	newsletter-remove {
+	0% {
+		background-color: rgba(25, 133, 198, 0.85);
+	}
+	100% {
+		bottom: -2000px;
+	}
+}
+
+
+/* Responsive Breakpoint */
+
+@media all and (max-width: 960px) {
+	.hero {
+		background-position: 0px 0px;
+	}
+
+	.highlight-body {
+		grid-template-areas: 
+			'card1 card2' 
+			'card3 card4' 
+			'card5 card6';
+	}
+
+	.card {
+		width: 200px;
+		height: 250px;
+	}
+
+	.newsletter-panel .form {
+		width: 100%;
+	}
+}
+
+@media all and (max-width: 480px) {
+	.hero {
+		background-position: 0px 0px;
+	}
+
+	.notif-panel {
+		width: 100%;
+		height: 100px;
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 10px;
+	}
+
+	.notif-panel button {
+		margin-left: 0px;
+		margin-top: 10px;
+	}
+
+	.container {
+		padding-top: 115px;
+	}
+
+	@keyframes	container-after {
+		from {
+			margin-top: 0px;
+		}
+		to {
+			margin-top: -120px;
+		}
+	}
+
+	.highlight-body {
+		grid-template-areas: 
+			'card1' 
+			'card2' 
+			'card3' 
+			'card4' 
+			'card5' 
+			'card6';
+	}
+
+	.card {
+		width: 300px;
+		height: 180px;
+	}
+
+	.highlight-header {
+		width: 300px;
+	}
+
+	.newsletter-panel {
+		width: 100%;
+		height: 230px;
+	}
+
+	.newsletter-panel .form {
+		flex-direction: column;
+		width: 100%;
+		height: 75px;
+	}
+
+	.newsletter-panel .form input {
+		width: 100%;
+		height: 50%;
+	}
+
+	.newsletter-panel .form button {
+		width: 100%;
+		margin-top: 10px;
+		height: 50%;
+	}
+}
+
+
+
+
+
+
+
+
+
+
